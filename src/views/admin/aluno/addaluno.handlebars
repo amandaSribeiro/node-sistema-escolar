@@ -1,0 +1,27 @@
+<main>
+    <div class="p-5 mb-4 bg-light rounded-3">
+        <div class="container-fluid py-5"> 
+            <h3> Novo Aluno: </h3>
+            <div class="card">
+                <div class="card-body">
+                    <form action="/rota_aluno/aluno/novo" method="POST">
+                        <label for="matricula">Matricula: </label> 
+                        <input type="text" id="matricula" name="matricula" placeholder="Digite a matricula do aluno" class="form-control">
+                        <label for="nome">Nome: </label> 
+                        <input type="text" id="nome" name="nome" placeholder="Digite o nome do aluno" class="form-control">
+                        <label for="turma">Turma: </label><br>
+                        <select name="fk_turma" class="form-select">
+                            {{#each turmas}}
+                            <option value="{{id_turma}}">{{descricao}}</option>
+                            {{else}}\
+                            <option value="0">Nenhuma turma registrada</option>
+                            {{/each}}
+                        </select>
+                        <br>
+                        <button type="submit" class="btn btn-success">Cadastrar Aluno</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
